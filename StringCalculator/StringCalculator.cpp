@@ -4,7 +4,7 @@
 #include <vector>
 
 // I could just use free functions from STL but I think it ruins the point of the assignment
-bool isdelimiter(std::vector<char>& delimiters, const char c) {
+constexpr bool isdelimiter(std::vector<char>& delimiters, const char c) {
 	for (const auto& v : delimiters) {
 		if (c == v) {
 			return true;
@@ -13,7 +13,11 @@ bool isdelimiter(std::vector<char>& delimiters, const char c) {
 	return false;
 }
 
-int64_t parse_input(std::vector<char>& delimiters, std::string_view input) {
+constexpr int64_t to_integer(std::string_view buffer) {
+
+}
+
+constexpr int64_t parse_input(std::vector<char>& delimiters, std::string_view input) {
 	int64_t result = 0;
 	std::vector<int64_t> numbers{};
 	std::string buffer{};
